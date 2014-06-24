@@ -1,12 +1,12 @@
 %if 0%{?fedora}
-%global with_python3 0
+%global with_python3 1
 %endif
 
 %global srcname eliot
 
 Name:           python-%{srcname}
-Version:        0.3.0
-Release:        1%{?dist}
+Version:        0.4.0
+Release:        2%{?dist}
 Summary:        Logging as Storytelling
 
 License:        ASL 2.0
