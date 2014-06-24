@@ -17,5 +17,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
+    config.cache.enable :generic, {
+      "mock" => { :cache_dir => "/var/cache/some" },
+    }
   end
 end
