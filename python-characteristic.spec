@@ -6,15 +6,15 @@
 
 Name:           python-%{srcname}
 Version:        0.1.0
-Release:        2%{?dist}
-Summary:        Say 'yes' to types but 'no' to typing!
+Release:        3%{?dist}
+Summary:        Python library that eases the chores of implementing attributes
 
 License:        MIT
 URL:            https://github.com/hynek/characteristic/
 Source0:        https://pypi.python.org/packages/source/c/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildArch:      noarch
  
-BuildRequires:  python-devel
+BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 BuildRequires:  pytest
 
@@ -28,6 +28,8 @@ Requires:       python
 
 
 %description
+Say 'yes' to types but 'no' to typing!
+
 characteristic is a Python package with class decorators that ease the chores
 of implementing the most common attribute-related object protocols.
 
@@ -39,15 +41,18 @@ You just specify the attributes to work with and ``characteristic`` gives you:
 
 *without* writing dull boilerplate code again and again.
 
-So put down that type-less data structures and welcome some class into your life!
+So put down that type-less data structures and welcome some class into your
+life!
 
 
 %if 0%{?with_python3}
 %package -n python3-%{srcname}
-Summary:        Say 'yes' to types but 'no' to typing!
-Requires:	python3
+Summary:        Python library that eases the chores of implementing attributes
+Requires:       python3
 
 %description -n python3-%{srcname}
+Say 'yes' to types but 'no' to typing!
+
 characteristic is a Python package with class decorators that ease the chores
 of implementing the most common attribute-related object protocols.
 
@@ -59,7 +64,8 @@ You just specify the attributes to work with and ``characteristic`` gives you:
 
 *without* writing dull boilerplate code again and again.
 
-So put down that type-less data structures and welcome some class into your life!
+So put down that type-less data structures and welcome some class into your
+life!
 %endif # with_python3
 
 %prep
@@ -106,7 +112,7 @@ popd
 
 %{python2_sitelib}/%{srcname}.py*
 %{python2_sitelib}/test_characteristic.py*
-%{python2_sitelib}/%{srcname}-%{version}-py?.?.egg-info
+%{python2_sitelib}/%{srcname}-%{version}-py%{python2_version}.egg-info
 
 %if 0%{?with_python3}
 %files -n python3-%{srcname}
@@ -116,12 +122,15 @@ popd
 %{python3_sitelib}/test_%{srcname}.py
 %{python3_sitelib}/__pycache__/%{srcname}.*.py[co]
 %{python3_sitelib}/__pycache__/test_%{srcname}.*.py[co]
-%{python3_sitelib}/%{srcname}-%{version}-py?.?.egg-info
+%{python3_sitelib}/%{srcname}-%{version}-py%{python3_version}.egg-info
 %endif # with_python3
 
 %changelog
-* Sat Jul 12 2014 Tom Prince - 0.1.0-2
+* Sun Jul 13 2014 Tom Prince <tom.prince@twistedmatrix.com> - 0.1.0-3
+- Address review comments (#1119004).
+
+* Sat Jul 12 2014 Tom Prince <tom.prince@twistedmatrix.com> - 0.1.0-2
 - Add python3 support.
 
-* Tue Jun 10 2014 Tom Prince - 0.1.0-1
+* Tue Jun 10 2014 Tom Prince <tom.prince@twistedmatrix.com> - 0.1.0-1
 - Initial package.
