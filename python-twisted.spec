@@ -1,6 +1,6 @@
 Name:           python-twisted
 Version:        14.0.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Twisted is a networking engine written in Python
 License:        MIT
 URL:            http://twistedmatrix.com/
@@ -10,9 +10,11 @@ BuildRequires:  python2-devel >= 2.6
 BuildRequires:  python-zope-interface >= 3.6.0
 BuildRequires:  python-crypto >= 2.6.1
 BuildRequires:  pyOpenSSL >= 0.10
+BuildRequires:  python-service-identity >= 1.0.0
 
 Requires:       python-zope-interface >= 3.6.0
 Requires:       pyOpenSSL >= 0.10
+Requires:       python-service-identity >= 1.0.0
 
 # Bring all provided resources back into the main package namespace.
 Obsoletes:      python-twisted-conch < 14
@@ -152,6 +154,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Jul 13 2014 Tom Prince <tom.prince@twistedmatrix.com> - 14.0.0-2
+- Depend on python-service-identity for proper SSL certificate verification.
+
 * Sat Jun 07 2014 Jonathan Steffan <jsteffan@fedoraproject.org> - 14.0.0-1
 - Update to 14.0.0
 - Ship Twisted as a fully featured package without subpackages on the advice
