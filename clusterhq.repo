@@ -1,0 +1,13 @@
+[clusterhq]
+name=ClusterHQ for Fedora $releasever
+baseurl=http://archive.clusterhq.com/fedora/$releasever/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-clusterhq
+
+[clusterhq-source]
+name=ClusterHQ for Fedora $releasever - Source
+baseurl=http://archive.clusterhq.com/fedora/$releasever/SRPMS/
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-clusterhq
