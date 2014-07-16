@@ -1,3 +1,4 @@
+# Build with `rpmbuild -D "_sourcedir $PWD" -ba clusterhq-release.spec`
 Name:           clusterhq-release
 Version:        1
 Release:        1%{?dist}
