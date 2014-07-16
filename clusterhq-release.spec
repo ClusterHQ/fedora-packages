@@ -1,14 +1,13 @@
 # Build with `rpmbuild -D "_sourcedir $PWD" -ba clusterhq-release.spec`
 Name:           clusterhq-release
 Version:        1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ClusterHQ Repository Configuration
 
 License:        ASL 2.0
 URL:            http://clusterhq.com/
 Source0:        clusterhq.repo
 
-Requires:       zfs-release
 BuildArch:      noarch
 
 %description
@@ -24,5 +23,8 @@ install -m 644 clusterhq.repo $RPM_BUILD_ROOT/etc/yum.repos.d
 
 
 %changelog
-* Tue Jul 15 2014 tom.prince@ualberta.net - 1-1.fc20
+* Wed Jul 17 2014 Tom Prince <tom.prince@clusterhq.com> - 1-2.fc20
+- Don't depend on zfs-release, since it isn't needed for flocker-cli.
+
+* Tue Jul 15 2014 Tom Prince <tom.prince@clusterhq.com> - 1-1.fc20
 - Initial Package 
