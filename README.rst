@@ -1,4 +1,4 @@
-Packages for ClusterHQ's flocker, that aren't available in fedora.
+Packages for ClusterHQ's flocker that aren't available in fedora.
 
 
 clusterhq-release package

@@ -5,7 +5,7 @@ Release:        3%{?dist}
 Summary:        ClusterHQ Repository Configuration
 
 License:        ASL 2.0
-URL:            http://clusterhq.com/
+URL:            https://clusterhq.com/
 Source0:        clusterhq.repo
 
 BuildArch:      noarch
