@@ -25,6 +25,7 @@ install -m 644 clusterhq.repo $RPM_BUILD_ROOT/etc/yum.repos.d
 %changelog
 * Fri Sep 11 2014 Tom Prince <tom.prince@clusterhq.com> - 1-4.fc20
 - Fix source repository URL.
+- Use https URLs.
 
 * Fri Aug 22 2014 Tom Prince <tom.prince@clusterhq.com> - 1-3.fc20
 - Disable GPG checks, since we don't have a signing key.
