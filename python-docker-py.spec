@@ -3,10 +3,10 @@
 
 Name:           python-docker-py
 Version:        0.5.0
-Release:        0.clusterhq.1%{?dist}
+Release:        1%{?dist}
 Summary:        An API client for docker written in Python
 License:        ASL 2.0
-URL:            http://www.docker.io
+URL:            http://www.docker.com
 # Arch follows docker-io
 # only x86_64 for now: https://github.com/dotcloud/docker/issues/136
 ExclusiveArch:  x86_64
@@ -44,7 +44,6 @@ Requires:       python-six
 %{__python} setup.py install --root %{buildroot}
 
 %files
-%defattr(-,root,root,-)
 %doc LICENSE README.md
 %dir %{python_sitelib}/docker
 %dir %{python_sitelib}/docker_py-%{version}-py2*.egg-info
@@ -52,8 +51,8 @@ Requires:       python-six
 %{python_sitelib}/docker_py-%{version}-py2*.egg-info/*
 
 %changelog
-* Mon Sep 22 2014 Tom Prince <tom.prince@clusterhq.com> - 0.5.0-0.clusterhq.1
-- version bump to 0.5.0
+* Mon Sep 22 2014 Tom Prince <tom.prince@clusterhq.com> - 0.5.0-1
+- Resolves: rhbz#1145511 - version bump to 0.5.0
 
 * Tue Aug 26 2014 Lokesh Mandvekar <lsm5@fedoraproject.org> - 0.4.0-3
 - correct bogus date
