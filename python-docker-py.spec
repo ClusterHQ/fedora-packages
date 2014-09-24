@@ -3,7 +3,7 @@
 
 Name:           python-docker-py
 Version:        0.5.0
-Release:        1%{?dist}
+Release:        1.clusterhq.1%{?dist}
 Summary:        An API client for docker written in Python
 License:        ASL 2.0
 URL:            http://www.docker.com
@@ -27,9 +27,9 @@ BuildRequires:  docker-io
 Requires:       docker-io
 %endif
 
-Requires:       python-requests
-Requires:       python-websocket-client
-Requires:       python-six
+Requires:       python-requests >= 2.2.1
+Requires:       python-websocket-client >= 0.11.0
+Requires:       python-six >= 1.3.0
 
 %description
 %{summary}
@@ -51,6 +51,9 @@ Requires:       python-six
 %{python_sitelib}/docker_py-%{version}-py2*.egg-info/*
 
 %changelog
+* Tue Sep 23 2014 Tom Prince <tom.prince@clusterhq.com> - 0.5.0-1.clusterhq.1
+- Specify depedencies to match those in setup.py.
+
 * Mon Sep 22 2014 Tom Prince <tom.prince@clusterhq.com> - 0.5.0-1
 - Resolves: rhbz#1145511 - version bump to 0.5.0
 
