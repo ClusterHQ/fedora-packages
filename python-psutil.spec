@@ -85,7 +85,7 @@ popd
 
  
 %files
-%doc CREDITS HISTORY LICENSE README TODO
+%doc CREDITS HISTORY.rst LICENSE README.rst TODO
 %{python_sitearch}/%{short_name}/
 %{python_sitearch}/*.egg-info
 %{python_sitearch}/*.so
@@ -93,7 +93,7 @@ popd
 
 %if 0%{?with_python3}
 %files -n python3-psutil
-%doc CREDITS HISTORY LICENSE README TODO
+%doc CREDITS HISTORY.rst LICENSE README.rst TODO
 %{python3_sitearch}/%{short_name}/
 %{python3_sitearch}/*.egg-info
 %{python3_sitearch}/*.so
