@@ -5,8 +5,8 @@
 %global srcname characteristic
 
 Name:           python-%{srcname}
-Version:        0.1.0
-Release:        3%{?dist}
+Version:        14.1.0
+Release:        1%{?dist}
 Summary:        Python library that eases the chores of implementing attributes
 
 License:        MIT
@@ -16,15 +16,17 @@ BuildArch:      noarch
  
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
-BuildRequires:  pytest
+%if 0%{?fedora} > 20
+BuildRequires:  pytest >= 2.6
+%endif # fedora > 20
 
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
-BuildRequires:  python3-pytest
+%if 0%{?fedora} > 20
+BuildRequires:  python3-pytest >= 2.6
+%endif # fedora > 20
 %endif # with_python3
-
-Requires:       python
 
 
 %description
@@ -48,7 +50,6 @@ life!
 %if 0%{?with_python3}
 %package -n python3-%{srcname}
 Summary:        Python library that eases the chores of implementing attributes
-Requires:       python3
 
 %description -n python3-%{srcname}
 Say 'yes' to types but 'no' to typing!
@@ -97,6 +98,7 @@ popd
 
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
+%if 0%{?fedora} > 20
 %check
 py.test --pyargs test_characteristic
 
@@ -105,6 +107,7 @@ pushd %{py3dir}
 py.test-%{python3_version} --pyargs test_characteristic
 popd
 %endif # with_python3
+%endif # fedora > 20
 
 
 %files
@@ -126,6 +129,10 @@ popd
 %endif # with_python3
 
 %changelog
+* Wed Sep 10 2014 Tom Prince <tom.prince@twistedmatrix.com> - 14.1.0-1
+- Bump version to 14.1.0.
+- Address review comments (#1119004).
+
 * Sun Jul 13 2014 Tom Prince <tom.prince@twistedmatrix.com> - 0.1.0-3
 - Address review comments (#1119004).
 
