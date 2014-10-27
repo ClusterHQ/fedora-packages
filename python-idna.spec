@@ -9,7 +9,7 @@ Version:        0.8
 Release:        2%{?dist}
 Summary:        Internationalized Domain Names in Applications (IDNA)
 
-License:        BSD
+License:        BSD and Python and Unicode
 URL:            https://github.com/kjd/idna
 Source0:        https://pypi.python.org/packages/source/i/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildArch:      noarch
@@ -105,6 +105,9 @@ popd
 %endif # with_python3
 
 %changelog
+* Mon Oct 27 2014 tom.prince@ualberta.net - 0.8-3
+- Update licences.
+
 * Sat Jul 12 2014 tom.prince@ualberta.net - 0.8-2
 - Be more specfic about .egg-info directories.
 - Use python2-devel
