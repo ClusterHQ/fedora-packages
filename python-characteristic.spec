@@ -5,7 +5,7 @@
 %global srcname characteristic
 
 Name:           python-%{srcname}
-Version:        14.1.0
+Version:        14.3.0
 Release:        1%{?dist}
 Summary:        Python library that eases the chores of implementing attributes
 
@@ -129,6 +129,10 @@ popd
 %endif # with_python3
 
 %changelog
+* Wed Sep 10 2014 Tom Prince <tom.prince@twistedmatrix.com> - 14.3.0-1
+- Bump version to 14.3.0.
+- Address review comments (#1119004).
+
 * Wed Sep 10 2014 Tom Prince <tom.prince@twistedmatrix.com> - 14.1.0-1
 - Bump version to 14.1.0.
 - Address review comments (#1119004).
