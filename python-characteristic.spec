@@ -129,7 +129,7 @@ popd
 %endif # with_python3
 
 %changelog
-* Wed Sep 10 2014 Tom Prince <tom.prince@twistedmatrix.com> - 14.3.0-1
+* Sat Dec 20 2014 Tom Prince <tom.prince@twistedmatrix.com> - 14.3.0-1
 - Bump version to 14.3.0.
 - Address review comments (#1119004).
 
