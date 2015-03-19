@@ -1,3 +1,6 @@
+**This is a deprecated repository.**
+**New packages are in the Flocker repository and are, at the time of writing, uploaded to Amazon S3.**
+
 Packages for ClusterHQ's flocker that aren't available in fedora.
 
 
